@@ -249,7 +249,9 @@ function getMovingSum(arr) {
  * [ "a" ] => []
  */
 function getSecondItems(arr) {
-    throw new Error('Not implemented');
+    return arr.filter(function(_, i) {
+        return i % 2 != 0;
+    });
 }
 
 
@@ -286,7 +288,11 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
 function get3TopItems(arr) {
-    throw new Error('Not implemented');
+    arr.sort(function(a, b) {
+        return a - b;
+    });
+    arr.reverse();
+    return arr.slice(0, 3);
 }
 
 
@@ -337,7 +343,10 @@ function sortDigitNamesByNumericOrder(arr) {
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
 function getItemsSum(arr) {
-    throw new Error('Not implemented');
+    if (arr.length === 0) {
+        return 0;
+    }
+    return arr.reduce(function(a, b) { return (a + b) });
 }
 
 /** 
@@ -386,7 +395,7 @@ function findAllOccurences(arr, item) {
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
 function toStringList(arr) {
-    throw new Error('Not implemented');
+    return arr.toString();
 }
 
 
